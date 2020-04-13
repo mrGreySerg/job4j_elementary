@@ -21,6 +21,6 @@ public class CheckPrimeNumberTest {
     @Test
     public void when1() {
         boolean result = CheckPrimeNumber.check(1);
-        assertThat(result, is(true));
+        assertThat(result, is(false));
     }
 }
