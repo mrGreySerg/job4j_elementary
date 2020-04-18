@@ -23,4 +23,21 @@ public class MatrixCheck {
         }
         return result;
     }
+
+    /**
+     * method monoVertical checks all column of array fills by char X;
+     * @param board - two-dimensional array for check.
+     * @param column - index of column.
+     * @return - boolean result of check.
+     */
+    public static boolean monoVertical(char[][] board, int column) {
+        boolean result = true;
+        for (int i = 0; i < board.length; i++) {
+            if (board[i][column] != 'X') {
+                result = false;
+                break;
+            }
+        }
+        return result;
+    }
 }
