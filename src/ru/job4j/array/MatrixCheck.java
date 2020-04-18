@@ -40,4 +40,17 @@ public class MatrixCheck {
         }
         return result;
     }
+
+    /**
+     * method extractDiagonal creates new array from the diagonal elements of the two-dimensional array.
+     * @param board - two-dimensional array.
+     * @return - new array.
+     */
+    public static char[] extractDiagonal(char[][] board) {
+        char[] result = new char[board.length];
+        for (int index = 0; index < board.length; index++) {
+            result[index] = board[index][index];
+        }
+        return result;
+    }
 }
