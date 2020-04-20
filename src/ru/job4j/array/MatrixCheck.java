@@ -53,4 +53,22 @@ public class MatrixCheck {
         }
         return result;
     }
+
+    /**
+     * method isWin checks the winning situation in the game sokoban.
+     * @param board - an array of type char displays the filled playing field.
+     * @return - result, winning situation or not.
+     */
+    public static boolean isWin(char[][] board) {
+        boolean result = false;
+        for (int i = 0, j = 0; i < board.length; i++, j++) {
+            if (board[i][j] == 'X'
+                    && (monoHorizontal(board, i) || monoVertical(board, j))
+            ) {
+                result = true;
+                break;
+            }
+        }
+        return result;
+    }
 }
