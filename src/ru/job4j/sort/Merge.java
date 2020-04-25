@@ -6,30 +6,30 @@ public class Merge {
 
     public int[] merge(int[] left, int[] right) {
         int[] result = new int[left.length + right.length];
-        int index = 0;
         int i = 0;
         int j = 0;
+        int index = 0;
 
         while (index < result.length) {
 
-            while (i < left.length) {
-                if (left[i] < right[j]) {
-                    result[index] = left[i];
-                    index++;
-                    i++;
-                } else {
-                    break;
-                }
+            if (i < left.length && left[i] < right[j]) {
+                result[index] = left[i];
+                index++;
+                i++;
+            } else {
+                result[index] = right[j];
+                index++;
+                j++;
             }
 
-            while (j < right.length) {
-                if (right[j] < left[i]) {
-                    result[index] = right[j];
-                    index++;
-                    j++;
-                } else {
-                    break;
-                }
+            if (j == right.length && i < left.length) {
+                result[index] = left[i];
+                index++;
+                i++;
+            } else if (i == left.length && j < right.length) {
+                result[index] = right[j];
+                index++;
+                j++;
             }
         }
         return result;
@@ -37,10 +37,11 @@ public class Merge {
 
     public static void main(String[] args) {
         Merge process = new Merge();
-        int[] result = process.merge(
-                new int[] {1, 3, 5},
-                new int[] {2, 4}
+        int[] rsl = process.merge(
+                new int[] {2, 4},
+                new int[] {1, 3, 5}
         );
-        System.out.println(Arrays.toString(result));
+        System.out.println(Arrays.toString(rsl));
     }
 }
+
