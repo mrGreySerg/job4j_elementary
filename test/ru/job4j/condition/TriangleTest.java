@@ -8,13 +8,17 @@ public class TriangleTest {
 
     @Test
     public void whenExist() {
-        boolean result = Triangle.exist(2, 2, 2);
-        assertThat(result, is(true));
+        Triangle triangle = new Triangle(new Point(0, 0), new Point(0, 5), new Point(5, 0));
+        double result = triangle.area();
+        double expect = 12.5;
+        assertThat(result, is(expect));
     }
 
     @Test
     public void whenDoNotExist() {
-        boolean result = Triangle.exist(10, 2, 2);
-        assertThat(result, is(false));
+        Triangle triangle = new Triangle(new Point(0, 0), new Point(0, 10), new Point(0, 5));
+        double result = triangle.area();
+        double expect = -1;
+        assertThat(result, is(expect));
     }
 }
