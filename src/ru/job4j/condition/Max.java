@@ -6,4 +6,12 @@ public class Max {
         int result = left > right ? left : right;
         return result;
     }
+
+    public static int max(int first, int second, int third) {
+        return max(first, max(second, third));
+    }
+
+    public static int max(int first, int second, int third, int forth) {
+        return max(first, max(second, third, forth));
+    }
 }
