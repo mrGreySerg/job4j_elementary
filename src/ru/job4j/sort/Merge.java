@@ -9,9 +9,7 @@ public class Merge {
         int i = 0;
         int j = 0;
         int index = 0;
-
         while (index < result.length) {
-
             if (i < left.length && left[i] < right[j]) {
                 result[index] = left[i];
                 index++;
@@ -21,7 +19,6 @@ public class Merge {
                 index++;
                 j++;
             }
-
             if (j == right.length && i < left.length) {
                 result[index] = left[i];
                 index++;

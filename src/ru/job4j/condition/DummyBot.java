@@ -15,10 +15,8 @@ public class DummyBot {
     public static void main(String[] args) {
         String botAnswer = DummyBot.answer("How are you?");
         System.out.println(botAnswer);
-
         botAnswer = DummyBot.answer("Привет, Бот.");
         System.out.println(botAnswer);
-
         botAnswer = DummyBot.answer("Пока.");
         System.out.println(botAnswer);
     }

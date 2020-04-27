@@ -49,6 +49,5 @@ public class Converter {
         int dollarOut = dollar;
         boolean passedDollar = dollarExpected == dollarOut;
         System.out.println("120 rubles are 2 dollars. Test result: " + passedDollar);
-
     }
 }

@@ -12,15 +12,15 @@ public class BarleyBreak {
      * @param args - args.
      */
     public static void main(String[] args) {
-        int[][] myArray = new int[3][3];
-        myArray[0][0] = 1;
-        myArray[0][1] = 2;
-        myArray[0][2] = 3;
-        myArray[1][0] = 4;
-        myArray[1][1] = 5;
-        myArray[1][2] = 6;
-        myArray[2][0] = 7;
-        myArray[2][1] = 8;
-        myArray[2][2] = 9;
+        int[][] array = new int[3][3];
+        array[0][0] = 1;
+        array[0][1] = 2;
+        array[0][2] = 3;
+        array[1][0] = 4;
+        array[1][1] = 5;
+        array[1][2] = 6;
+        array[2][0] = 7;
+        array[2][1] = 8;
+        array[2][2] = 9;
     }
 }
