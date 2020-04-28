@@ -2,8 +2,8 @@ package ru.job4j.animal;
 
 public class Predator extends Animal {
 
-    public Predator() {
-        super();
+    public Predator(String name) {
+        super(name);
         System.out.println("class Predator!!!");
     }
 }
