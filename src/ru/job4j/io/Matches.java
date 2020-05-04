@@ -4,6 +4,19 @@ import java.util.Scanner;
 
 public class Matches {
 
+    public static void message(int numbMatches) {
+        System.out.println("Игра продолжается.");
+        System.out.println("Спичек осталось: " + numbMatches);
+    }
+
+    public static boolean check(int numbMatchers, int move) {
+        boolean result = false;
+        if (numbMatchers - move == 0) {
+            result = true;
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int numbMatches = 11;
@@ -14,23 +27,21 @@ public class Matches {
         while (true) {
             System.out.print("\nХод первого игрока: ");
             int firstGamer = Integer.valueOf(input.nextLine());
-            if (numbMatches - firstGamer == 0) {
+            if (check(numbMatches, firstGamer)) {
                 System.out.println("Первый игрок победил. Поздравляем!!!");
                 break;
             } else {
                 numbMatches -= firstGamer;
-                System.out.println("Игра продолжается.");
-                System.out.println("Спичек осталось: " + numbMatches);
+                message(numbMatches);
             }
             System.out.print("\nХод второго игрока: ");
             int secondGamer = Integer.valueOf(input.nextLine());
-            if (numbMatches - secondGamer == 0) {
+            if (check(numbMatches, secondGamer)) {
                 System.out.println("Второй игрок победил. Поздравляем!!!");
                 break;
             } else {
                 numbMatches -= secondGamer;
-                System.out.println("Игра продолжается.");
-                System.out.println("Спичек осталось: " + numbMatches);
+                message(numbMatches);
             }
         }
     }
