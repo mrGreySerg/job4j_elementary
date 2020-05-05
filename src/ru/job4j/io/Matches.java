@@ -9,40 +9,28 @@ public class Matches {
         System.out.println("Спичек осталось: " + numbMatches);
     }
 
-    public static boolean check(int numbMatchers, int move) {
-        boolean result = false;
-        if (numbMatchers - move == 0) {
-            result = true;
-        }
-        return result;
-    }
-
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int numbMatches = 11;
-        System.out.println("Правила игры!!! \n"
-                + "Всего 11 спичек. Два игрока по очереди  берут от 1 до 3 спичек себе. \n"
+        System.out.println("Правила игры!!!" + System.lineSeparator()
+                + "Всего 11 спичек. Два игрока по очереди  берут от 1 до 3 спичек себе."
+                + System.lineSeparator()
                 + "Выирывает тот, кто забрал последние спички."
         );
-        while (true) {
-            System.out.print("\nХод первого игрока: ");
-            int firstGamer = Integer.valueOf(input.nextLine());
-            if (check(numbMatches, firstGamer)) {
-                System.out.println("Первый игрок победил. Поздравляем!!!");
+        boolean gameContinue = true;
+        boolean isPlayer1 = true;
+        while (gameContinue) {
+            System.out.println();
+            System.out.printf("Ход %s игрока: ", isPlayer1 ? "первого" : "второго");
+            int moveGamer = Integer.valueOf(input.nextLine());
+            if (numbMatches - moveGamer == 0) {
+                System.out.printf("%s игрок победил. Поздравляем!!!", isPlayer1 ? "Первый" : "Второй");
                 break;
             } else {
-                numbMatches -= firstGamer;
+                numbMatches -= moveGamer;
                 message(numbMatches);
             }
-            System.out.print("\nХод второго игрока: ");
-            int secondGamer = Integer.valueOf(input.nextLine());
-            if (check(numbMatches, secondGamer)) {
-                System.out.println("Второй игрок победил. Поздравляем!!!");
-                break;
-            } else {
-                numbMatches -= secondGamer;
-                message(numbMatches);
-            }
+            isPlayer1 = !isPlayer1;
         }
     }
 }
