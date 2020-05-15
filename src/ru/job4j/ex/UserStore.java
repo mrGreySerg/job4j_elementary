@@ -35,8 +35,11 @@ public class UserStore {
      * @throws UserInvalidException
      */
     public static boolean validate(User user) throws UserInvalidException {
-        if (!user.isValid() || user.getUserName().length() < 3) {
-            throw new UserInvalidException("Юзер не валиден или логин меньше 3 символов!");
+        if (!user.isValid()) {
+            throw new UserInvalidException("Юзер не валиден!");
+        }
+        if (user.getUserName().length() < 3) {
+            throw new UserInvalidException("Логин меньше 3 символов!");
         }
         return true;
     }
